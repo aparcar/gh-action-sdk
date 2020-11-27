@@ -67,3 +67,4 @@ The action reads a few env variables:
 * `NO_REFRESH_CHECK` disable check if patches need a refresh.
 * `NO_SHFMT_CHECK` disable check if init files are formated
 * `V` changes the build verbosity level.
+* `RUN_SIZE_COMPARE` runs the size_compare.sh script and posts the output.

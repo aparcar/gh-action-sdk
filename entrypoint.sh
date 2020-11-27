@@ -146,3 +146,8 @@ fi
 if [ -d logs/ ]; then
 	mv logs/ /artifacts/
 fi
+
+if [ -n "$RUN_SIZE_COMPARE" ]; then
+	./scripts/size_compare.sh | tee size_compare.txt
+	echo "::warning::$(cat size_compare.txt)"
+fi

@@ -25,6 +25,7 @@ runs:
           --env NO_SHFMT_CHECK \
           --env PACKAGES \
           --env INDEX \
+          --env RUN_SIZE_COMPARE \
           --env V \
           -v ${{ steps.inputs.outputs.artifacts_dir }}:/artifacts \
           -v ${{ steps.inputs.outputs.feed_dir }}:/feed \
