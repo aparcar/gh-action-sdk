@@ -15,6 +15,8 @@ runs:
           --env GITHUB_WORKSPACE \
           --env IGNORE_ERRORS \
           --env KEY_BUILD \
+          --env BUILD_KEY_APK_PUB \
+          --env BUILD_KEY_APK_SEC \
           --env NO_DEFAULT_FEEDS \
           --env NO_REFRESH_CHECK \
           --env NO_SHFMT_CHECK \

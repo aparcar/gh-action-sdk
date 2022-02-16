@@ -12,6 +12,11 @@ if [ -n "$KEY_BUILD" ]; then
 	SIGNED_PACKAGES="y"
 fi
 
+if [ -n "$BUILD_KEY_APK_PUB" ] && [ -n "$BUILD_KEY_APK_SEC" ]; then
+	echo "$BUILD_KEY_APK_PUB" > public-key.pem
+	echo "$BUILD_KEY_APK_SEC" > private-key.pem
+fi
+
 echo "src-link $FEEDNAME $GITHUB_WORKSPACE/" > feeds.conf
 
 if [ -z "$NO_DEFAULT_FEEDS" ]; then

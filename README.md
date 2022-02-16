@@ -58,6 +58,8 @@ The action reads a few env variables:
   `action`.
 * `IGNORE_ERRORS` can ignore failing packages builds.
 * `KEY_BUILD` can be a private Signify/`usign` key to sign the packages feed.
+* `BUILD_KEY_APK_PUB` can be a public APK key.
+* `BUILD_KEY_APK_SEC` can be a private APK key.
 * `NO_DEFAULT_FEEDS` disable adding the default SDK feeds
 * `NO_REFRESH_CHECK` disable check if patches need a refresh.
 * `NO_SHFMT_CHECK` disable check if init files are formated
