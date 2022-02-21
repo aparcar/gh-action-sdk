@@ -63,4 +63,5 @@ The action reads a few env variables:
 * `NO_DEFAULT_FEEDS` disable adding the default SDK feeds
 * `NO_REFRESH_CHECK` disable check if patches need a refresh.
 * `NO_SHFMT_CHECK` disable check if init files are formated
+* `NO_REPO_FEED` disable current repository as feed
 * `V` changes the build verbosity level.

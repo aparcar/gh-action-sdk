@@ -17,7 +17,9 @@ if [ -n "$BUILD_KEY_APK_PUB" ] && [ -n "$BUILD_KEY_APK_SEC" ]; then
 	echo "$BUILD_KEY_APK_SEC" > private-key.pem
 fi
 
-echo "src-link $FEEDNAME $GITHUB_WORKSPACE/" > feeds.conf
+if [ -z "$NO_REPO_FEED" ]; then
+	echo "src-link $FEEDNAME $GITHUB_WORKSPACE/" > feeds.conf
+fi
 
 if [ -z "$NO_DEFAULT_FEEDS" ]; then
 	cat feeds.conf.default >> feeds.conf
@@ -34,8 +36,13 @@ cat feeds.conf
 make defconfig > /dev/null
 
 if [ -z "$PACKAGES" ]; then
-	# compile all packages in feed
-	./scripts/feeds install -d y -p "$FEEDNAME" -f -a
+	if [ -z "$NO_REPO_FEED" ]; then
+		# compile all packages in feed
+		./scripts/feeds install -d y -p "$FEEDNAME" -f -a
+	else
+		./scripts/feeds install -d y -a
+	fi
+
 	make \
 		BUILD_LOG="$BUILD_LOG" \
 		SIGNED_PACKAGES="$SIGNED_PACKAGES" \
